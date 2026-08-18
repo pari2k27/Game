@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Click Counter Game</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f8d7ff, #d9e7ff);
+        }
+        
+        #root {
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 45px;
+            color: #351c75;
+            margin-bottom: 25px;
+        }
+        
+        h1 img {
+            width: 55px;
+            height: 55px;
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+        
+        #game-container {
+            width: 450px;
+            max-width: 90%;
+            margin: auto;
+            padding: 35px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        #game-container p {
+            font-size: 20px;
+            color: #444;
+        }
+        
+        #game-container p img {
+            width: 35px;
+            height: 35px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        #click-count,
+        #reset-count {
+            font-weight: bold;
+            font-size: 30px;
+            color: #351c75;
+        }
+        
+        button {
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        #click-button {
+            background-color: #6c3ce9;
+            color: white;
+        }
+        
+        #click-button:hover {
+            background-color: #5225c7;
+            transform: scale(1.05);
+        }
+        
+        #reset-button {
+            background-color: #ef4444;
+            color: white;
+        }
+        
+        #reset-button:hover {
+            background-color: #d62828;
+            transform: scale(1.05);
+        }
+        
+        #win-message {
+            font-size: 30px !important;
+            font-weight: bold;
+            color: #16a34a !important;
+            min-height: 40px;
+        }
+        
+        .instruction {
+            font-size: 16px !important;
+            color: #666 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root">
+
+        <h1>
+            <img src="business-goal.png" alt="Goal"> CLICK COUNTER GAME
+        </h1>
+
+        <div id="game-container">
+
+            <p>
+                <img src="trophy.png" alt="Score"> Score:
+                <span id="click-count">0</span>
+            </p>
+
+            <button id="click-button">
+                🖱️ Click Me!
+            </button>
+
+            <button id="reset-button">
+                🔄 Reset
+            </button>
+
+            <p>
+                <img src="C:\Users\Admin\jsminip\image.png" alt="Reset"> Reset Count:
+                <span id="reset-count">0</span>
+            </p>
+
+            <p class="instruction"><img src="C:\Users\Admin\jsminip\image copy.png" alt="Instruction"> Click the button to increase your score!
+            </p>
+
+            <p id="win-message"></p>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Select elements
+        const clickButton = document.getElementById("click-button");
+        const resetButton = document.getElementById("reset-button");
+
+        const clickCount = document.getElementById("click-count");
+        const resetCount = document.getElementById("reset-count");
+
+        const winMessage = document.getElementById("win-message");
+
+
+        // Variables
+        let count = 0;
+        let resetCounter = 0;
+
+
+        // Click Button Event
+        clickButton.addEventListener("click", () => {
+
+            count++;
+
+            clickCount.textContent = count;
+
+
+            // Check if score reaches 10
+            if (count === 10) {
+
+                winMessage.textContent = "🎉 You Won! 🏆";
+
+            }
+
+        });
+
+
+        // Reset Button Event
+        resetButton.addEventListener("click", () => {
+
+            count = 0;
+
+            resetCounter++;
+
+            clickCount.textContent = count;
+
+            resetCount.textContent = resetCounter;
+
+            winMessage.textContent = "";
+
+        });
+    </script>
+
+</body>
+
+</html>
