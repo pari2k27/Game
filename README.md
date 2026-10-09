@@ -1,2 +1,21 @@
-# Game
-Click Counter Game A simple interactive web game built using HTML, CSS, and JavaScript. Users can increase their score by clicking the button, reset the score, and track the number of resets. A winning message is displayed when the score reaches 10. The project demonstrates DOM manipulation, event handling, variables, and conditional statements in JavaScript.
+# Click Counter Game
+
+A polished interactive web application built using HTML, CSS, and JavaScript. Players increase their score by clicking a button, reach the target score of 10 to win, and reset the game while tracking how many times the game has been restarted.
+
+## Features
+
+- Simple, engaging click-to-score mechanic
+- Win condition at 10 points
+- Reset counter for game tracking
+- Responsive, modern interface
+
+## Run the Project
+
+Open `index.html` in a browser to play the game.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
